@@ -1,13 +1,11 @@
 body {
-<<<<<<< HEAD
     font-family: sans-serif;
-=======
-  font-family:sans-serif;
->>>>>>> eaf0c045711df2ecb83b369dd47213f8dc9ac270
+    overflow-x:hidden;
     margin: 0px;
+    width:100vw;
 }
 
-hr { 
+hr {
     display: block;
     margin-top: 0.5em;
     margin-bottom: 0.5em;
@@ -16,16 +14,11 @@ hr {
     border-style: inset;
     border-width: 1px;
     color: #c44e3b;
-} 
+}
 
 .container {
     display: grid;
     grid-template-columns: 1fr;
-<<<<<<< HEAD
-    /* color: grey; */
-=======
-    /*color: grey;*/
->>>>>>> eaf0c045711df2ecb83b369dd47213f8dc9ac270
 }
 
 .nav-wrapper {
@@ -105,7 +98,6 @@ hr {
     background-color: #c44e3b;
     box-sizing: border-box;
     border-radius: 4px;
-<<<<<<< HEAD
     display: flex;
 }
 
@@ -116,11 +108,13 @@ hr {
 
 .uses .images-grid{
     grid-template-columns:33% 34% 33%;
-    display:grid;
     padding-bottom: 10px;
-=======
-
->>>>>>> eaf0c045711df2ecb83b369dd47213f8dc9ac270
+    display:grid;
+}
+@media only screen and (max-width:1000px){
+  .uses .images-grid.small-enabled{
+    grid-template-columns:100%;
+  }
 }
 
 .heading {
@@ -129,33 +123,22 @@ hr {
 .heading h1 {
     font-size: 40px;
     align-self: left;
-<<<<<<< HEAD
     color: #f8f8ff;
     text-align: left;
     padding: 10px;
 }
 
 .layout .ImgBox img {
-=======
-    color: black;
-}
-
-.layout .ImgBox img {
-
->>>>>>> eaf0c045711df2ecb83b369dd47213f8dc9ac270
     width: 800px;
     height: 600px;
 }
 
-<<<<<<< HEAD
 .layout .content {
     padding-left: 150px;
     padding-right: 10px;
     color: #f8f8ff;
 }
 
-=======
->>>>>>> eaf0c045711df2ecb83b369dd47213f8dc9ac270
 .layout .content h2{
     margin: 0;
     padding-left: 0;
@@ -169,14 +152,9 @@ hr {
     margin: 0;
     padding: 10px 0 0;
     text-align: justify;
-<<<<<<< HEAD
     font-size: 20px;
     color: #f8f8ff;
     padding: 10px;
-=======
-    font-size: 15px;
-    color: cornsilk;
->>>>>>> eaf0c045711df2ecb83b369dd47213f8dc9ac270
 }
 
 .layout-grid{
@@ -186,12 +164,8 @@ hr {
 
 .info {
     margin: 100px;
-<<<<<<< HEAD
     float: left;
     width: 200px;
-=======
-    border: 10px solid #ccc;
->>>>>>> eaf0c045711df2ecb83b369dd47213f8dc9ac270
 }
 
 .info img {
@@ -215,12 +189,8 @@ hr {
 }
 
 .footer {
-    text-align: center;
-    text-size-adjust: 40px;
     background-color: black;
+    text-align: center;
     color:white;
-<<<<<<< HEAD
-    padding-left: 5px;
-=======
->>>>>>> eaf0c045711df2ecb83b369dd47213f8dc9ac270
+    width:100vw;
 }
