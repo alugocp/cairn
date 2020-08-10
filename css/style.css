@@ -1,3 +1,7 @@
+:root{
+  --white:#f8f8f8;
+  --red:#c44e3b;
+}
 body {
     font-family: sans-serif;
     overflow-x:hidden;
@@ -5,111 +9,127 @@ body {
     width:100vw;
 }
 
-hr {
-    display: block;
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-    margin-left: auto;
-    margin-right: auto;
-    border-style: inset;
-    border-width: 1px;
-    color: #c44e3b;
+/* General */
+.stripe {
+    background-color: var(--red);
+    height:15px;
+    width:100vw;
 }
-
 .container {
     display: grid;
     grid-template-columns: 1fr;
 }
 
+/* Navigation */
 .nav-wrapper {
     display: flex;
     justify-content: space-between;
     padding: 38px;
 }
-
 .left-side {
     display: flex;
 }
-
 .nav-wrapper > .left-side > div {
     margin-right: 20px;
     font-size: 20px;
     text-transform: uppercase;
 }
-
 .nav-link-wrapper{
     height: 22px;
-    /* border-bottom: 1px solid transparent; */
-    /* transition: border-bottom 0.5s; */
 }
-
 .nav-link-wrapper h1{
     font-size: 130px;
-    color: #c44e3b;
+    color: var(--red);
     padding-right: 10px;
     display: inline;
     padding: 10px;
 }
+
+/* Overview */
 .overview h1 {
     font-size: 40px;
     align-self: left;
-    color: #f8f8ff;
-    /* padding: 10px; */
+    color: var(--white);
     text-align: left;
 }
-
 .overview p {
-    font-size: 20px;
-    align-self: left;
-    color: #f8f8ff;
+  position:relative;
+  font-size: 20px;
+  color: var(--white);
 }
-
 .overview {
-    background-color: #c44e3b;
-    text-align: center;
-    padding: 10px;
+  background-color: var(--red);
+  position:relative;
+  padding:10px 35px;
 }
 
+/* Usage */
 .usage h1 {
-    font-size: 40px;
-    align-self: left;
-    color: black;
-    text-align: center;
-    padding: 10px;
-    text-align: left;
+  font-size:40px;
+  color:black;
 }
-
 .usage {
-    background-color: #f8f8ff;
+  background-color:var(--white);
+  padding:15px 35px;
 }
-
 .usage p {
     font-size: 20px;
     align-self: left;
     color: black;
     padding-bottom: 20px;
 }
-
 .arg-output {
-    background-color: gray;
+  transform:translateX(-50%);
+  background-color:#cccccc;
+  margin-bottom:25px;
+  position:relative;
+  border-radius:8px;
+  padding:4px 24px;
+  width:80%;
+  left:50%;
 }
 
+/* Layout */
+.layout h1 {
+  color:var(--white);
+  padding-left:35px;
+  font-size:40px;
+}
 .layout {
-    background-color: #c44e3b;
-    box-sizing: border-box;
-    border-radius: 4px;
-    display: flex;
+  background-color: var(--red);
+  padding-top:15px;
 }
-
 .layout-grid{
-    grid-template-columns:50% 50%;
-    display:grid;
+  grid-template-columns:50% 50%;
+  display:grid;
+}
+.layout .content {
+  padding:0 35px 15px 10px;
+  color:var(--white);
+  font-size: 20px;
+}
+.layout img{
+  width:100%;
 }
 
+/* Who uses section */
+.uses{
+  background-color: var(--white);
+}
+.uses h1{
+  font-size:40px;
+  padding:40px;
+  color:black;
+}
 .uses .images-grid{
-    grid-template-columns:33% 34% 33%;
-    padding-bottom: 10px;
-    display:grid;
+  grid-template-columns:33% 34% 33%;
+  text-align:center;
+  display:grid;
+  width:100vw;
+}
+.images-grid .info img {
+  margin-bottom:50px;
+  height:200px;
 }
 @media only screen and (max-width:1000px){
   .uses .images-grid.small-enabled{
@@ -117,80 +137,11 @@ hr {
   }
 }
 
-.heading {
-    background-color: #c44e3b;
-}
-.heading h1 {
-    font-size: 40px;
-    align-self: left;
-    color: #f8f8ff;
-    text-align: left;
-    padding: 10px;
-}
-
-.layout .ImgBox img {
-    width: 800px;
-    height: 600px;
-}
-
-.layout .content {
-    padding-left: 150px;
-    padding-right: 10px;
-    color: #f8f8ff;
-}
-
-.layout .content h2{
-    margin: 0;
-    padding-left: 0;
-    color: #f8f8ff;
-    font-size: 20px;
-    padding: 10px;
-    text-align: left;
-}
-
-.layout .content p {
-    margin: 0;
-    padding: 10px 0 0;
-    text-align: justify;
-    font-size: 20px;
-    color: #f8f8ff;
-    padding: 10px;
-}
-
-.layout-grid{
-  grid-template-columns:50% 50%;
-  display:grid;
-}
-
-.info {
-    margin: 100px;
-    float: left;
-    width: 200px;
-}
-
-.info img {
-    height: 200px;
-    align-content: space-between;
-}
-
-.uses {
-    background-color: #f8f8ff;
-}
-.uses h1 {
-    font-size: 40px;
-    align-self: left;
-    color: black;
-    padding: 40px;
-    text-align: left;
-}
-.uses .images-grid{
-  grid-template-columns:33% 34% 33%;
-  display:grid;
-}
-
+/* Footer */
 .footer {
-    background-color: black;
+    background-color:black;
     text-align: center;
-    color:white;
+    padding:15px 0;
     width:100vw;
+    color:white;
 }
