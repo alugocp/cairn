@@ -1,11 +1,23 @@
 body {
+    font-family: sans-serif;
     margin: 0px;
 }
+
+hr { 
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+    color: #c44e3b;
+} 
 
 .container {
     display: grid;
     grid-template-columns: 1fr;
-    color: grey;
+    /* color: grey; */
 }
 
 .nav-wrapper {
@@ -26,60 +38,77 @@ body {
 
 .nav-link-wrapper{
     height: 22px;
-    border-bottom: 1px solid transparent;
-    transition: border-bottom 0.5s;
+    /* border-bottom: 1px solid transparent; */
+    /* transition: border-bottom 0.5s; */
 }
 
-.nav-link-wrapper a {
-    color: rgb(14, 7, 7);
-    text-decoration: none;
-    transition: color 0.5s;
+.nav-link-wrapper h1{
+    font-size: 130px;
+    color: #c44e3b;
+    padding-right: 10px;
+    display: inline;
+    padding: 10px;
 }
-
-.nav-link-wrapper:hover{
-    border-bottom: 1px solid black;
-}
-
-.nav-link-wrapper a:hover{
-    color: black;
-}
-
 .overview h1 {
     font-size: 40px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     align-self: left;
-    color: black;
+    color: #f8f8ff;
+    /* padding: 10px; */
+    text-align: left;
 }
 
 .overview p {
     font-size: 20px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     align-self: left;
-    color: black;
+    color: #f8f8ff;
 }
 
 .overview {
     background-color: #c44e3b;
     text-align: center;
+    padding: 10px;
 }
 
 .usage h1 {
     font-size: 40px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     align-self: left;
     color: black;
+    text-align: center;
+    padding: 10px;
+    text-align: left;
 }
 
 .usage {
-    background-color: #c44e3b;
+    background-color: #f8f8ff;
 }
+
+.usage p {
+    font-size: 20px;
+    align-self: left;
+    color: black;
+    padding-bottom: 20px;
+}
+
+.arg-output {
+    background-color: gray;
+}
+
 .layout {
     background-color: #c44e3b;
     box-sizing: border-box;
-    padding: 20px;
     border-radius: 4px;
     display: flex;
-    
+}
+
+.layout-grid{
+    grid-template-columns:50% 50%;
+    display:grid;
+}
+
+.uses .images-grid{
+    grid-template-columns:33% 34% 33%;
+    display:grid;
+    padding-bottom: 10px;
 }
 
 .heading {
@@ -87,45 +116,43 @@ body {
 }
 .heading h1 {
     font-size: 40px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     align-self: left;
-    color: black;
-    text-align: center;
-}
-
-.layout .ImgBox {
-    width: 400px;
-    flex: 0 0 150px;
+    color: #f8f8ff;
+    text-align: left;
+    padding: 10px;
 }
 
 .layout .ImgBox img {
-    
     width: 800px;
-    height: 300px;
+    height: 600px;
 }
 
 .layout .content {
-    padding-left: 450px;
+    padding-left: 150px;
+    padding-right: 10px;
+    color: #f8f8ff;
 }
 
 .layout .content h2{
     margin: 0;
     padding-left: 0;
-    color: #0e0b0c;
+    color: #f8f8ff;
+    font-size: 20px;
+    padding: 10px;
+    text-align: left;
 }
 
 .layout .content p {
     margin: 0;
     padding: 10px 0 0;
     text-align: justify;
-    font-size: 15px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    color: cornsilk;
+    font-size: 20px;
+    color: #f8f8ff;
+    padding: 10px;
 }
 
 .info {
     margin: 100px;
-    border: 10px solid #ccc;
     float: left;
     width: 200px;
 }
@@ -137,19 +164,22 @@ body {
 }
 
 .uses {
-    background-color: #c44e3b;
+    background-color: #f8f8ff;
 }
 
 .uses h1 {
     font-size: 40px;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
     align-self: left;
     text-align: center;
     color: black;
+    padding: 40px;
+    text-align: left;
 }
 
 .footer {
     text-align: center;
     text-size-adjust: 40px;
-    color: black;
+    background-color: black;
+    color:white;
+    padding-left: 5px;
 }
