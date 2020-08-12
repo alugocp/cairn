@@ -6,43 +6,25 @@ body {
     font-family: sans-serif;
     overflow-x:hidden;
     margin: 0px;
-    width:100vw;
 }
 
 /* General */
 .stripe {
     background-color: var(--red);
     height:15px;
-    width:100vw;
-}
-.container {
-    display: grid;
-    grid-template-columns: 1fr;
-    grid-template-columns: 100%;
 }
 
 /* Navigation */
 .nav-wrapper {
-    display: flex;
-    justify-content: space-between;
+    grid-template-columns:50% 50%;
     padding: 38px;
-    width: 100vw;
+    display: grid;
 }
-.left-side {
-    display: flex;
-    width: 100vw;
-}
-.nav-wrapper > .left-side > div {
-    margin-right: 20px;
-    font-size: 20px;
-    text-transform: uppercase;
-}
-.nav-link-wrapper{
-    height: 22px;
-    width: 100vw;
+.nav-wrapper .right-side{
+  text-align:right;
 }
 
-.nav-link-wrapper h1{
+.nav-wrapper h1{
     font-size: 130px;
     color: var(--red);
     padding-right: 10px;
@@ -51,25 +33,21 @@ body {
     font-size: calc(18px + 8vw);
 }
 
-@media (max-width:1000px) {
-    .nav-wrapper,.left-side,.logo{
-        float: none;
-        text-align: center;
-        width: 100%;
-        position: relative;
-    }
-    
-    .right-side .brand {
-        float: none;
-        display: block;
-    }
-    
-}
-
-@media screen and (max-width:1000px) {
-    .nav-wrapper {
-        grid-template-columns: 100%;
-    }
+@media only screen and (max-width:1000px) {
+  .nav-wrapper > .left-side,.nav-wrapper > .right-side{
+    text-align:center;
+  }
+  .nav-wrapper .left-side *{
+    display:block;
+  }
+  .nav-wrapper .left-side img{
+    transform:translateX(-50%);
+    position:relative;
+    left:50%;
+  }
+  .nav-wrapper {
+    grid-template-columns: 100%;
+  }
 }
 
 /* Overview */
@@ -88,7 +66,6 @@ body {
     background-color: var(--red);
     position:relative;
     padding:10px 35px;
-    width: 100vw;
 }
 
 @media only screen and (max-width:1000px){
@@ -106,7 +83,6 @@ body {
 .usage {
     background-color:var(--white);
     padding:15px 35px;
-    width: 100vw;
 }
 .usage p {
     font-size: 20px;
@@ -176,7 +152,7 @@ body {
     grid-template-columns:33% 34% 33%;
     text-align:center;
     display:grid;
-    width:100vw;
+    /*width:100vw;*/
 }
 .images-grid .info img {
     margin-bottom:50px;
@@ -193,6 +169,5 @@ body {
     background-color:black;
     text-align: center;
     padding:15px 0;
-    width:100vw;
     color:white;
 }
