@@ -1,6 +1,6 @@
 :root{
-  --white:#f8f8f8;
-  --red:#c44e3b;
+    --white:#f8f8f8;
+    --red:#c44e3b;
 }
 body {
     font-family: sans-serif;
@@ -18,6 +18,7 @@ body {
 .container {
     display: grid;
     grid-template-columns: 1fr;
+    grid-template-columns: 100%;
 }
 
 /* Navigation */
@@ -25,9 +26,11 @@ body {
     display: flex;
     justify-content: space-between;
     padding: 38px;
+    width: 100vw;
 }
 .left-side {
     display: flex;
+    width: 100vw;
 }
 .nav-wrapper > .left-side > div {
     margin-right: 20px;
@@ -36,13 +39,37 @@ body {
 }
 .nav-link-wrapper{
     height: 22px;
+    width: 100vw;
 }
+
 .nav-link-wrapper h1{
     font-size: 130px;
     color: var(--red);
     padding-right: 10px;
     display: inline;
     padding: 10px;
+    font-size: calc(18px + 8vw);
+}
+
+@media (max-width:1000px) {
+    .nav-wrapper,.left-side,.logo{
+        float: none;
+        text-align: center;
+        width: 100%;
+        position: relative;
+    }
+    
+    .right-side .brand {
+        float: none;
+        display: block;
+    }
+    
+}
+
+@media screen and (max-width:1000px) {
+    .nav-wrapper {
+        grid-template-columns: 100%;
+    }
 }
 
 /* Overview */
@@ -53,24 +80,33 @@ body {
     text-align: left;
 }
 .overview p {
-  position:relative;
-  font-size: 20px;
-  color: var(--white);
+    position:relative;
+    font-size: 20px;
+    color: var(--white);
 }
 .overview {
-  background-color: var(--red);
-  position:relative;
-  padding:10px 35px;
+    background-color: var(--red);
+    position:relative;
+    padding:10px 35px;
+    width: 100vw;
+}
+
+@media only screen and (max-width:1000px){
+    .overview {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
 }
 
 /* Usage */
 .usage h1 {
-  font-size:40px;
-  color:black;
+    font-size:40px;
+    color:black;
 }
 .usage {
-  background-color:var(--white);
-  padding:15px 35px;
+    background-color:var(--white);
+    padding:15px 35px;
+    width: 100vw;
 }
 .usage p {
     font-size: 20px;
@@ -79,62 +115,77 @@ body {
     padding-bottom: 20px;
 }
 .arg-output {
-  transform:translateX(-50%);
-  background-color:#cccccc;
-  margin-bottom:25px;
-  position:relative;
-  border-radius:8px;
-  padding:4px 24px;
-  width:80%;
-  left:50%;
+    transform:translateX(-50%);
+    background-color:#cccccc;
+    margin-bottom:25px;
+    position:relative;
+    border-radius:8px;
+    padding:4px 24px;
+    width:80%;
+    left:50%;
+}
+
+@media only screen and (max-width:1000px){
+    .usage {
+        padding-left: 0px;
+        padding-right: 0px;
+    }
 }
 
 /* Layout */
 .layout h1 {
-  color:var(--white);
-  padding-left:35px;
-  font-size:40px;
+    color:var(--white);
+    padding-left:35px;
+    font-size:40px;
 }
 .layout {
-  background-color: var(--red);
-  padding-top:15px;
+    background-color: var(--red);
+    padding-top:15px;
 }
 .layout-grid{
-  grid-template-columns:50% 50%;
-  display:grid;
+    grid-template-columns:50% 50%;
+    display:grid;
+    width: 100vw;
 }
+
 .layout .content {
-  padding:0 35px 15px 10px;
-  color:var(--white);
-  font-size: 20px;
+    padding:0 35px 15px 10px;
+    color:var(--white);
+    font-size: 20px;
 }
 .layout img{
-  width:100%;
+    width:100%;
+}
+
+@media only screen and (max-width:1000px){
+    .layout .layout-grid.small-enabled{
+        grid-template-columns:100%;
+    }
 }
 
 /* Who uses section */
 .uses{
-  background-color: var(--white);
+    background-color: var(--white);
 }
 .uses h1{
-  font-size:40px;
-  padding:40px;
-  color:black;
+    font-size:40px;
+    padding:40px;
+    color:black;
 }
 .uses .images-grid{
-  grid-template-columns:33% 34% 33%;
-  text-align:center;
-  display:grid;
-  width:100vw;
+    grid-template-columns:33% 34% 33%;
+    text-align:center;
+    display:grid;
+    width:100vw;
 }
 .images-grid .info img {
-  margin-bottom:50px;
-  height:200px;
+    margin-bottom:50px;
+    height:200px;
 }
 @media only screen and (max-width:1000px){
-  .uses .images-grid.small-enabled{
-    grid-template-columns:100%;
-  }
+    .uses .images-grid.small-enabled{
+        grid-template-columns:100%;
+    }
 }
 
 /* Footer */
