@@ -20,11 +20,15 @@
 ##
 #######################################################################
 
-out=~/Desktop/build
-in=~/Desktop/clients/edhaus
+if [ "$#" -lt 2 ]; then
+	echo "Usage: cairn <in> <out>"
+	exit 1
+fi
+out="$2"
+in="$1"
 mkdir -p "$out"
 
-pushd $in > /dev/null
+pushd "$in" > /dev/null
 files=( $(find *) )
 
 for f in "${files[@]}"; do
