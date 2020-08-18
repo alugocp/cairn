@@ -9,3 +9,8 @@ To install Cairn as a system-wide command simply run the following:
 ```bash
 sudo cp cairn.sh /usr/bin/cairn
 ```
+
+## Usage
+```bash
+cairn src dest
+```

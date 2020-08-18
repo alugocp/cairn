@@ -21,11 +21,15 @@
 #######################################################################
 
 if [ "$#" -lt 2 ]; then
-	echo "Usage: cairn <in> <out>"
+	echo "Usage: cairn <src> <dst>"
+	printf "  src - the project directory to be built\n"
+	printf "  dst - the build destination\n"
 	exit 1
 fi
-out="$2"
 in="$1"
+out="$2"
+[ "${out:0:1}" != "/" ] && out="$(pwd)/${out}"
+[ "${in:0:1}" != "/" ] && in="$(pwd)/${in}"
 mkdir -p "$out"
 
 pushd "$in" > /dev/null
