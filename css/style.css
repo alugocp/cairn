@@ -1,11 +1,12 @@
 :root{
-    --white:#f8f8f8;
-    --red:#c44e3b;
+  --white:#f8f8f8;
+  --red:#c44e3b;
 }
 body {
-    font-family: sans-serif;
-    overflow-x:hidden;
-    margin: 0px;
+  background-color:var(--white);
+  font-family: sans-serif;
+  overflow-x:hidden;
+  margin: 0px;
 }
 
 /* General */
@@ -23,7 +24,6 @@ body {
 .nav-wrapper .right-side{
   text-align:right;
 }
-
 .nav-wrapper h1{
     font-size: 130px;
     color: var(--red);
@@ -31,6 +31,12 @@ body {
     display: inline;
     padding: 10px;
     font-size: calc(18px + 8vw);
+}
+.nav-wrapper .logo{
+  width:125px;
+}
+.nav-wrapper .github{
+  width:75px;
 }
 
 @media only screen and (max-width:1000px) {
@@ -65,7 +71,7 @@ body {
 .overview {
     background-color: var(--red);
     position:relative;
-    padding:10px 35px;
+    padding:10px 12%;
 }
 
 @media only screen and (max-width:1000px){
@@ -82,23 +88,23 @@ body {
 }
 .usage {
     background-color:var(--white);
-    padding:15px 35px;
+    padding:15px 12%;
 }
-.usage p {
-    font-size: 20px;
-    align-self: left;
-    color: black;
-    padding-bottom: 20px;
+.usage > p{
+  padding-bottom: 20px;
+  font-size:20px;
+  color:black;
 }
 .arg-output {
-    transform:translateX(-50%);
-    background-color:#cccccc;
-    margin-bottom:25px;
-    position:relative;
-    border-radius:8px;
-    padding:4px 24px;
-    width:80%;
-    left:50%;
+  transform:translateX(-50%);
+  background-color:#cccccc;
+  margin-bottom:50px;
+  position:relative;
+  border-radius:8px;
+  padding:4px 24px;
+  font-size:20px;
+  width:80%;
+  left:50%;
 }
 
 @media only screen and (max-width:1000px){
@@ -110,9 +116,10 @@ body {
 
 /* Layout */
 .layout h1 {
-    color:var(--white);
-    padding-left:35px;
-    font-size:40px;
+  text-align:center;
+  color:var(--white);
+  padding-left:35px;
+  font-size:40px;
 }
 .layout {
     background-color: var(--red);
@@ -144,30 +151,31 @@ body {
     background-color: var(--white);
 }
 .uses h1{
-    font-size:40px;
-    padding:40px;
-    color:black;
+  text-align:center;
+  font-size:40px;
+  padding:40px;
+  color:black;
 }
 .uses .images-grid{
-    grid-template-columns:33% 34% 33%;
-    text-align:center;
-    display:grid;
-    /*width:100vw;*/
+  grid-template-columns:33% 34% 33%;
+  text-align:center;
+  display:grid;
 }
-.images-grid .info img {
-    margin-bottom:50px;
-    height:200px;
+.images-grid .info img{
+  max-width:80%;
+  margin-bottom:50px;
+  height:200px;
 }
 @media only screen and (max-width:1000px){
-    .uses .images-grid.small-enabled{
-        grid-template-columns:100%;
-    }
+  .uses .images-grid.small-enabled{
+    grid-template-columns:100%;
+  }
 }
 
 /* Footer */
 .footer {
-    background-color:black;
-    text-align: center;
-    padding:15px 0;
-    color:white;
+  background-color:black;
+  text-align: center;
+  color:var(--white);
+  padding:15px 0;
 }
