@@ -1,8 +1,8 @@
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta name="description" content="Cairn is a very simple Bash script">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <meta charset="utf-8"/>
+    <meta name="description" content="Cairn is a very simple Bash script"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
     <title>Cairn</title>
   </head>
   <body>
@@ -38,7 +38,11 @@
         </p>
         <div class="arg-output">
           <p>
-            Put usage here
+            <code>
+              Usage: cairn &lt;src&gt; &lt;dst&gt;<br>
+              &nbsp;&nbsp;src - the project directory to be built<br>
+              &nbsp;&nbsp;dst - the build destination<br>
+            </code>
           </p>
         </div>
         <p>
@@ -58,10 +62,10 @@
         </p>
       </div>
       <div class="layout">
-        <h1>Project Layout</h1>
         <div class="layout-grid small-enabled">
-          <img src="images/code6.jpg">
+          <img src="images/layout.png"/>
           <div class="content">
+            <h1>Project Layout</h1>
             <p>
               Cairn works by reading every file in the provided source directory.
               It runs every index.php file it finds through your PHP interpreter, producing an index.html in the destination folder.

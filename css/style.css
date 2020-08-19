@@ -116,14 +116,11 @@ body {
 
 /* Layout */
 .layout h1 {
-  text-align:center;
   color:var(--white);
-  padding-left:35px;
   font-size:40px;
 }
 .layout {
     background-color: var(--red);
-    padding-top:15px;
 }
 .layout-grid{
     grid-template-columns:50% 50%;
