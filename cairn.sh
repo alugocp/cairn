@@ -28,29 +28,37 @@ if [ "$#" -lt 2 ]; then
 fi
 in="$1"
 out="$2"
-[ "${out:0:1}" != "/" ] && out="$(pwd)/${out}"
-[ "${in:0:1}" != "/" ] && in="$(pwd)/${in}"
+[[ "${out:0:1}" != "/" && "${out:0:1}" != "~" ]] && out="$(pwd)/${out}"
+[[ "${in:0:1}" != "/" && "${in:0:1}" != "~" ]] && in="$(pwd)/${in}"
 mkdir -p "$out"
 
-pushd "$in" > /dev/null
-files=( $(find *) )
+function iterate {
+	pushd "$1" > /dev/null
+	files=( $(find *) )
 
-for f in "${files[@]}"; do
-  if [ -f "$f" ]; then
-    folder=$(dirname "$f")
-    file=$(basename "$f")
-    ext="${file##*.}"
-    if [ "$ext" == "php" ]; then
-      if [ "$file" == "index.php" ]; then
-        [ "$folder" != "." ] && mkdir -p "$out/$folder"
-        pushd "$folder" > /dev/null
-        php index.php > "$out/$folder/index.html"
-        popd > /dev/null
-      fi
-    else
-      [ "$folder" != "." ] && mkdir -p "$out/$folder"
-      cp "$folder/$file" "$out/$folder/$file"
-    fi
-  fi
-done
-popd > /dev/null
+	for f in "${files[@]}"; do
+	  if [ -f "$f" ]; then
+			folder=$(dirname "$f")
+	    file=$(basename "$f")
+	    ext="${file##*.}"
+	    if [ "$ext" == "php" ]; then
+	      if [ "$file" == "index.php" ]; then
+	        [ "$folder" != "." ] && mkdir -p "$2/$folder"
+	        pushd "$folder" > /dev/null
+					echo "<!-- Built via Cairn (http://lugocorp.net) -->" > "$2/$folder/index.html"
+					php index.php >> "$2/$folder/index.html"
+	        popd > /dev/null
+	      fi
+			else
+	      [ "$folder" != "." ] && mkdir -p "$2/$folder"
+	      cp "$folder/$file" "$2/$folder/$file"
+	    fi
+		elif [[ -L "$f" && -d "$f" ]]; then
+			mkdir -p "$2/$f"
+			iterate "$1/$f" "$2/$f"
+		fi
+	done
+	popd > /dev/null
+}
+
+iterate "$in" "$out"
