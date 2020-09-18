@@ -176,3 +176,13 @@ body {
   color:var(--white);
   padding:15px 0;
 }
+.footer h3{
+  margin:0;
+}
+.footer a{
+  text-decoration:none;
+  color:var(--red);
+}
+.footer a:hover{
+  text-decoration:underline;
+}
